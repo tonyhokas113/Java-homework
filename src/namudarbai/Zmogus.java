@@ -59,4 +59,5 @@ atspausdinti studento kursa
 
 ***
 kai studentas sako labas() - Labas, as esu studentas vardas pavarde
+
 */
