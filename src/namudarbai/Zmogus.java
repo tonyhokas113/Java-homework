@@ -4,8 +4,8 @@ package namudarbai;
 
 public class Zmogus {
     
-    private String vardas;
-    private String pavarde;
+    protected String vardas;
+    protected String pavarde;
     
     public Zmogus(String vardas, String pavarde) {
         this.vardas = vardas;
@@ -13,10 +13,6 @@ public class Zmogus {
     }
     
     public String labas() {
-        return "labas";
-    }
-    
-    public String prisistatyk() {
         String labas = "Labas, as esu " + this.vardas + " " + this.pavarde + ".";
         return labas;
     }
