@@ -25,13 +25,3 @@ public class Studentas extends Zmogus {
     }
     
 }
-
-
-/*
-    public void labas() {
-        System.out.println("Labas, as esu studentas " +
-                this.getVardas() + " " +
-                this.getPavarde() + " mokausi " +
-                this.kursas);
-    }
-*/
