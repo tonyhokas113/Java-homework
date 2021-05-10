@@ -24,22 +24,20 @@ public class Objektai {
 // *************************************************************************************
 //      --------------- Namu darbas Masinyciu lenktynes ----------------------
 
-        int maxPaprasta = 80;
 
         Masina[] masinos = {
-            new Masina("Masina1", maxPaprasta),
-            new Masina("Masina2", maxPaprasta),
-            new Masina("Masina3", maxPaprasta),
-            new Masina("Masina4", maxPaprasta),
-            new Masina("Masina5", maxPaprasta),
-            new Masina("Masina6", maxPaprasta),
-            new Masina("Masina7", maxPaprasta),
-            new Masina("Masina8", maxPaprasta)
+            new Masina("Masina1", 80),
+            new Masina("Masina2", 180),
+            new Masina("Masina3", 140),
+            new Masina("Masina4", 200),
+            new Masina("Masina5", 230),
+            new Masina("Masina6", 160),
+            new Masina("Masina7", 100),
+            new Masina("Masina8", 120)
         };
 
         boolean yraLaimetojas = false;
         int spausdinamKas100 = 100;
-        int maxSportine = 100;
         int spoileris;
         int n;
 
@@ -47,16 +45,16 @@ public class Objektai {
         for (int i = 0; i < 2; i++) {
             if (i == 0) {
                 n = (int) (Math.random() * 4) + 1;
-                masinos[n - 1] = new SportineMasina("Sportine1", maxSportine);
+                masinos[n - 1] = new SportineMasina("Sportine1", 280);
             } else {
                 n = (int) (Math.random() * 4) + 5;
-                masinos[n - 1] = new SportineMasina("Sportine2", maxSportine);
+                masinos[n - 1] = new SportineMasina("Sportine2", 300);
             }
         }
 
-        while (yraLaimetojas == false) {
+        while (!yraLaimetojas) {
             for (int i = 0; i < masinos.length; i++) {
-                if (masinos[i].getMaxGreitis() == maxSportine) {
+                if (masinos[i] instanceof SportineMasina) {    //  (masinos[i].getMaxGreitis() == maxSportine)
                     spoileris = (int) (Math.random() * 2);
                     if (spoileris == 1) {
                        ((SportineMasina)masinos[i]).setSpoileris(true); 

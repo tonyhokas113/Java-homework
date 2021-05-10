@@ -12,6 +12,8 @@ public class Masina {
     public Masina(String pavadinimas, int maxGreitis) {
         this.pavadinimas = pavadinimas;
         this.maxGreitis = maxGreitis;
+        this.greitis = 0;
+        this.kelias = 0;
     }
     
     public String getPavadinimas() {
