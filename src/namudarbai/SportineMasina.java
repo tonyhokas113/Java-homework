@@ -1,5 +1,7 @@
 package namudarbai;
 
+import namudarbai.Masina;
+
 public class SportineMasina extends Masina {
 
     private boolean spoileris;

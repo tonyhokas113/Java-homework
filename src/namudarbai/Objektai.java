@@ -1,5 +1,7 @@
 package namudarbai;
 
+import kitas.SportineMasina;
+
 public class Objektai {
 
     public static void main(String[] args) {
