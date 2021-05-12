@@ -1,6 +1,6 @@
 package namudarbai;
 
-import kitas.SportineMasina;
+import namudarbai.SportineMasina;
 
 public class Objektai {
 
