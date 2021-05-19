@@ -17,7 +17,7 @@ public class ListMetodai implements Metodai {
     @Override
     public double fill(List l) {
 
-        int sum = 0;
+        double sum = 0;
         double avg = 0;
         for (int i = 0; i < l.size(); i++) {
             sum += (int) l.get(i);
@@ -29,7 +29,7 @@ public class ListMetodai implements Metodai {
     @Override
     public double max(List l) {
 
-        int inMemory = 0;
+        double inMemory = 0;
         for (int i = 0; i < l.size(); i++) {
             if (inMemory < (int) l.get(i)) {
                 inMemory = (int) l.get(i);
@@ -41,7 +41,7 @@ public class ListMetodai implements Metodai {
     @Override
     public double min(List l) {
         
-        int inMemory = (int) l.get(0);
+        double inMemory = (int) l.get(0);
         for (int i = 0; i < l.size(); i++) {
             if (inMemory > (int) l.get(i)) {
                 inMemory = (int) l.get(i);
@@ -76,4 +76,48 @@ double max(List l);
 sukurti metoda, kuris surastu maziausia elementa
 double min(List l);
 
+// Destytojo nd pvz:
+
+    public static double avg(List l) {
+
+        double sum = 0;
+        for (int i = 0; i < l.size(); i++) {
+            sum += (Double) l.get(i);
+        }
+        return sum / l.size();
+    }
+ 
+    public static double min(List l) {
+        double m = Double.MAX_VALUE;
+        for (int i = 0; i < l.size(); i++) {
+            if (m > (Double) l.get(i)) {
+                m = (Double) l.get(i);
+            }
+        }
+        return m;
+    }
+ 
+    public static double max(List l) {
+        double m = Double.MIN_VALUE;
+        for (int i = 0; i < l.size(); i++) {
+            if (m < (Double) l.get(i)) {
+                m = (Double) l.get(i);
+            }
+        }
+        return m;
+    }
+
+ 
+    public static void main(String[] args) {
+
+        List l = new ArrayList();
+        fill(l, 10);
+        System.out.println(l);
+        System.out.println(avg(l));
+        System.out.println(min(l));
+        System.out.println(max(l));
+
+}
+
 */
+
