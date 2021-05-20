@@ -187,4 +187,229 @@ ir atspausdinti po kiekvieno rusiavimo
 
     //didejimo tvarka - abcdef..., mazejimo tvarka - fedcba..
  
+
+        // Destytojo nd pavizdys: *******************************
+
+
+        List<Zmogus> l = new ArrayList();
+        
+        l.add(new Zmogus("Jonas", "Jonaitis"));
+        l.add(null);
+        l.add(new Zmogus("Petras", "Petraitis"));
+        l.add(new Zmogus("Petras", null));
+        l.add(new Zmogus(null, "Petraitis"));
+        l.add(new Zmogus("Antanas", "Antanaitis"));
+        l.add(new Zmogus("Jonas", "Petraitis"));
+        l.add(new Zmogus("Jonas", null));
+        l.add(new Zmogus("Jonas", null));
+        l.add(new Zmogus("Jonas", "Antanaitis"));
+        l.add(null);
+        l.add(new Zmogus("Antanas", "Petraitis"));
+        l.add(new Zmogus("Petras", "Jonaitis"));
+        l.add(new Zmogus(null, "Jonaitis"));
+        
+        printList(l);
+ 
+        class PagalVardaDidejimas implements Comparator<Zmogus> {
+
+            @Override
+            public int compare(Zmogus o1, Zmogus o2) {
+//                System.out.println(o1 + " lyginam su " + o2);
+                if (o1 == null) {
+                    if (o2 == null) {
+                        return 0;
+                    } else {
+                        return 1;
+                    }
+                } else {
+                    if (o2 == null) {
+                        return -1;
+                    } else {
+                        if (o1.getVardas() == null) {
+                            if (o2.getVardas() == null) {
+                                return 0;
+                            } else {
+                                return 1;
+                            }
+                        } else {
+                            if (o2.getVardas() == null) {
+                                return -1;
+                            } else {
+                                return o1.getVardas().compareTo(o2.getVardas());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        l.sort(new PagalVardaDidejimas());
+        
+        printList(l);
+ 
+        class PagalVardaPavardeDidejimas implements Comparator<Zmogus> {
+
+            @Override
+            public int compare(Zmogus o1, Zmogus o2) {
+//                System.out.println(o1 + " lyginam su " + o2);
+                if (o1 == null) {
+                    if (o2 == null) {
+                        return 0;
+                    } else {
+                        return 1;
+                    }
+                } else {
+                    if (o2 == null) {
+                        return -1;
+                    } else {
+                        if (o1.getVardas() == null) {
+                            if (o2.getVardas() == null) {
+                                return 0;
+                            } else {
+                                return 1;
+                            }
+                        } else {
+                            if (o2.getVardas() == null) {
+                                return -1;
+                            } else {
+                                int vardaiLygus = o1.getVardas().compareTo(o2.getVardas());
+                                if (vardaiLygus == 0) {
+                                    if (o1.getPavarde()== null) {
+                                        if (o2.getPavarde()== null) {
+                                            return 0;
+                                        } else {
+                                            return 1;
+                                        }
+                                    } else {
+                                        if (o2.getPavarde()== null) {
+                                            return -1;
+                                        } else {
+                                            return o1.getPavarde().compareTo(o2.getPavarde());
+                                        }
+                                    }
+                                } else {
+                                    return vardaiLygus;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        l.sort(new PagalVardaPavardeDidejimas());
+        
+        printList(l);
+        
+        l.sort(new Comparator<Zmogus>() {
+            @Override
+            public int compare(Zmogus o1, Zmogus o2) {
+//                System.out.println(o1 + " lyginam su " + o2);
+                if (o1 == null) {
+                    if (o2 == null) {
+                        return 0;
+                    } else {
+                        return -1;
+                    }
+                } else {
+                    if (o2 == null) {
+                        return 1;
+                    } else {
+                        if (o1.getPavarde()== null) {
+                            if (o2.getPavarde()== null) {
+                                return 0;
+                            } else {
+                                return -1;
+                            }
+                        } else {
+                            if (o2.getPavarde()== null) {
+                                return 1;
+                            } else {
+                                return o2.getPavarde().compareTo(o1.getPavarde());
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        printList(l);
+        
+        l.sort(new Comparator<Zmogus>() {
+            @Override
+            public int compare(Zmogus o1, Zmogus o2) {
+//                System.out.println(o1 + " lyginam su " + o2);
+                if (o1 == null) {
+                    if (o2 == null) {
+                        return 0;
+                    } else {
+                        return -1;
+                    }
+                } else {
+                    if (o2 == null) {
+                        return 1;
+                    } else {
+                        if (o1.getPavarde()== null) {
+                            if (o2.getPavarde()== null) {
+                                return 0;
+                            } else {
+                                return -1;
+                            }
+                        } else {
+                            if (o2.getPavarde()== null) {
+                                return 1;
+                            } else {
+                                int pavardesLygios = o2.getPavarde().compareTo(o1.getPavarde());
+                                if (pavardesLygios == 0) {
+                                    if (o1.getVardas() == null) {
+                                        if (o2.getVardas() == null) {
+                                            return 0;
+                                        } else {
+                                            return -1;
+                                        }
+                                    } else {
+                                        if (o2.getVardas() == null) {
+                                            return 1;
+                                        } else {
+                                            return o2.getVardas().compareTo(o1.getVardas());
+                                        }
+                                    }
+                                } else {
+                                    return pavardesLygios;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        printList(l);
+        
+        l.sort(new Comparator<Zmogus>() {
+            @Override
+            public int compare(Zmogus o1, Zmogus o2) {
+//                System.out.println(o1 + " lyginam su " + o2);
+                if (o1 == null) {
+                    if (o2 == null) {
+                        return 0;
+                    } else {
+                        return 1;
+                    }
+                } else {
+                    if (o2 == null) {
+                        return -1;
+                    }
+                    int z1 = (o1.getVardas() == null) ? 0 : o1.getVardas().length();
+                    z1 += (o1.getPavarde()== null) ? 0 : o1.getPavarde().length();
+                    int z2 = (o2.getVardas() == null) ? 0 : o2.getVardas().length();
+                    z2 += (o2.getPavarde()== null) ? 0 : o2.getPavarde().length();
+                    return z1 - z2;
+                }
+            }
+        });
+        
+        printList(l);
+        
+
      */
